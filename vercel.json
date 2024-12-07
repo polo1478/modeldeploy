@@ -14,5 +14,9 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ]
+  ],
+  "env": {
+    "REACT_APP_API_URL": "https://datachemical-lab-api.onrender.com",
+    "REACT_APP_ML_SERVICE_URL": "https://modeldeploy-1rrr.onrender.com"
+  }
 } 

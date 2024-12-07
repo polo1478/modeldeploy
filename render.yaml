@@ -1,18 +1,12 @@
 services:
   - type: web
-    name: ml-service
-    env: python
-    buildCommand: pip install -r python_service/requirements.txt
-    startCommand: cd python_service && python ml_service.py
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.8.0
-
-  - type: web
-    name: node-service
+    name: datachemical-lab-api
     env: node
     buildCommand: cd server && npm install
     startCommand: cd server && node server.js
     envVars:
       - key: ML_SERVICE_URL
-        value: https://ml-service.onrender.com 
+        value: https://modeldeploy-1rrr.onrender.com
+      - key: PORT
+        value: 5002
+    healthCheckPath: /health
